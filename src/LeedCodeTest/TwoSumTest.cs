@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Problems.TwoSum;
 using Xunit;
-using Problems.TwoSum;
 
 namespace LeedCodeTest
 {
     public class TwoSumTest
     {
-        [Fact]
-        public void TwoSum()
+        [Theory]
+        [InlineData(new object[] { new int[] { 2, 7, 11, 15 }, 9, new int[] { 0, 1 } })]
+        public void TwoSum(int[] nums, int target, int[] result)
         {
+            Assert.Equal(result, Solution.TwoSum(nums, target));
         }
     }
 }
