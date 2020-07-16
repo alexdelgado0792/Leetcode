@@ -8,7 +8,21 @@ namespace Problems.TwoSum
     {
         public static int[] TwoSum(int[] nums, int target)
         {
-            return null;
+            var complements = new List<int>();
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (complements.Contains(nums[i]))
+                {
+                    return new[] { complements.IndexOf(nums[i]), i };
+                }
+                else
+                {
+                    complements.Add(target - nums[i]);
+                }
+            }
+
+            throw new Exception("No solution");
         }
     }
 }
