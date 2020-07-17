@@ -8,12 +8,10 @@ namespace LeedCodeTest
     public class ReverseInteger
     {
         [Theory]
-        [InlineData(123,321)] 
-        [InlineData(-123,-321)] 
-        [InlineData(120,21)]
-        [InlineData(int.MaxValue, 7463847412)]
-        [InlineData(int.MinValue, -8463847412)]
-        public void Pass(int number, int result)
+        [InlineData(123, 321)]
+        [InlineData(-123, -321)]
+        [InlineData(120, 21)]
+        public void Pass(int number, long result)
         {
             Assert.Equal(result, Solution.Reverse(number));
         }
