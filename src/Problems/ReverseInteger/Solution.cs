@@ -8,6 +8,31 @@ namespace Problems.ReverseInteger
     {
         public static int Reverse(int x)
         {
+            long value = long.Parse(x.ToString());
+
+            bool isNegative = (x < 0);
+
+            string numberText = (isNegative) ? (value * -1).ToString() : value.ToString();
+
+            string result = string.Empty;
+            for (int i = numberText.Length - 1; i >= 0; i--)
+            {
+                result += numberText[i];
+            }
+
+            try
+            {
+                int number = int.Parse(result);
+                return (isNegative) ? (number * -1) : number;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        public static int Approach1(int x)
+        {
             string numberText = Math.Abs(x).ToString();
             string result = string.Empty;
 
@@ -16,7 +41,7 @@ namespace Problems.ReverseInteger
                 result += numberText[i];
             }
 
-            try 
+            try
             {
                 int number = int.Parse(result);
                 return (x > 0) ? number : (number * -1);
