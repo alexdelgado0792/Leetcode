@@ -20,15 +20,25 @@ namespace Problems.PalindromeNumber
             if (x < 0) return false;
             long reversedNumber = long.Parse(new string(x.ToString().Reverse().ToArray()));
 
-
             return x == reversedNumber;
         }
 
 
         private static bool NumberApproach(int x)
         {
-            return false;
-            
+            if (x < 0) return false;
+
+            int original = x;
+            int reversed = 0;
+            while (x != 0)
+            {
+                int remainder = x % 10;
+                reversed = (reversed * 10) + remainder;
+
+                x = x / 10;
+            }
+
+            return original == reversed;
         }
     }
 }
