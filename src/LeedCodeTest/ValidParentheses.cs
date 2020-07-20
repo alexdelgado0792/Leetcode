@@ -17,6 +17,7 @@ namespace LeedCodeTest
         [InlineData("{([{{()}}])}", true)]
         [InlineData("", true)]
         [InlineData("){", false)]
+        [InlineData("(])", false)]
         public void TwoSumPass(string input, bool result)
         {
             Assert.Equal(result, Solution.IsValid(input));
